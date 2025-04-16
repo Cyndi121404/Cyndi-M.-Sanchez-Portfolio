@@ -275,6 +275,8 @@ p {
   border-radius: 50%;
   opacity: 0.8;
   pointer-events: none;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 :root {
@@ -288,7 +290,7 @@ html, body {
   padding: 0;
   min-height: 100vh;
   background: radial-gradient(ellipse at bottom, #00172D 0%, #000000 100%);
-  background-attachment: fixed;
+  /* Removed background-attachment: fixed for better scroll performance */
   overflow: auto;
 }
 
@@ -315,6 +317,8 @@ html, body {
   background: transparent;
   box-shadow: var(--shadows-small);
   animation: animStar 50s linear infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 #stars:after {
@@ -330,6 +334,8 @@ html, body {
   background: transparent;
   box-shadow: var(--shadows-medium);
   animation: animStar 100s linear infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 #stars2:after {
@@ -345,6 +351,8 @@ html, body {
   background: transparent;
   box-shadow: var(--shadows-big);
   animation: animStar 150s linear infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
 }
 
 #stars3:after {

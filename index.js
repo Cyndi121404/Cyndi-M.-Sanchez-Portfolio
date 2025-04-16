@@ -20,32 +20,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Particles 
 let isNavActive = false;
+let lastParticleTime = 0;
+const particleThrottleDelay = 50; // milliseconds
 
 document.addEventListener('mousemove', (e) => {
     if (isNavActive) return;
-    
+
+    const now = Date.now();
+    if (now - lastParticleTime < particleThrottleDelay) return;
+    lastParticleTime = now;
+
     const container = document.getElementById('particles-container');
-  
+
     const particle = document.createElement('div');
     particle.classList.add('particle');
-  
+
     const size = Math.random() * 4 + 2;
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
-  
+
     particle.style.left = `${e.clientX}px`;
     particle.style.top = `${e.clientY}px`;
-  
+
     container.appendChild(particle);
-  
+
     setTimeout(() => {
       particle.style.transition = 'all 1s ease-out';
       particle.style.transform = `translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px)`;
       particle.style.opacity = 0;
     }, 10);
-  
+
     setTimeout(() => {
       particle.remove();
     }, 1100);
@@ -71,10 +76,10 @@ function generateStars(n) {
     return value;
   }
   
-  // Increased star counts for better coverage
-  document.documentElement.style.setProperty('--shadows-small', generateStars(1000));
-  document.documentElement.style.setProperty('--shadows-medium', generateStars(400));
-  document.documentElement.style.setProperty('--shadows-big', generateStars(200));
+  // Reduced star counts for better performance
+  document.documentElement.style.setProperty('--shadows-small', generateStars(500));
+  document.documentElement.style.setProperty('--shadows-medium', generateStars(200));
+  document.documentElement.style.setProperty('--shadows-big', generateStars(100));
 
 
 
