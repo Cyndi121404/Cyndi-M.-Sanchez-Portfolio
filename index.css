@@ -158,6 +158,25 @@ footer{
     font-size: 1.5rem;
   }
 }
+#Hackathon{
+  padding-bottom: 3rem;
+  h2{
+    text-align: center;
+    
+  }
+  p{
+    font-size: 1.2rem;
+    text-align: left;
+
+  }
+  h3{
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+  }
+}
 #Courses{
   padding-bottom: 5rem;
   h2{
