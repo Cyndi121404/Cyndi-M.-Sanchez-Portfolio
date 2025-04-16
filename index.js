@@ -25,7 +25,7 @@ let lastParticleTime = 0;
 const particleThrottleDelay = 50; // milliseconds
 
 document.addEventListener('mousemove', (e) => {
-    if (isNavActive) return;
+    // Removed isNavActive check to make particles always active
 
     const now = Date.now();
     if (now - lastParticleTime < particleThrottleDelay) return;
