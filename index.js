@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     navMobile.addEventListener('click', function() {
         navLinks.classList.toggle('active');
     });
+
+    // Close hamburger menu when a nav link is clicked
+    const navLinkItems = navLinks.querySelectorAll('a');
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
 });
 
 
